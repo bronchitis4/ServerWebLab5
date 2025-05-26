@@ -6,8 +6,8 @@ const router = express.Router();
 const testsController = new TestsController();
 
 
-router.post('/', testsController.saveTestResult);
-router.get('/average/:email', testsController.getAverageScore);
+router.post('/', verifyFirebaseToken, testsController.saveTestResult);
+router.get('/average/:email', verifyFirebaseToken, testsController.getAverageScore);
 
 
 export default router;
