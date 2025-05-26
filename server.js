@@ -12,7 +12,10 @@ import cors from 'cors';
 const PORT = process.env.PORT || 5000;
 const app = express(); 
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontlab5web.onrender.com',
+  credentials: true // якщо використовуєш cookies або auth
+}));
 app.use(express.json())
 app.use('/historical-platform', eventsRouter);
 app.use('/historical-platform', authRouter);
