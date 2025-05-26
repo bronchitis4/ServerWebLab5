@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.json())
 app.use('/historical-platform', eventsRouter);
 app.use('/historical-platform', authRouter);
-app.use('/historical-platform', testsRouter);
+app.use('/historical-platform/test-results', testsRouter);
 app.use(express.static('public'))
 
 app.listen(PORT, () => {
